@@ -153,6 +153,8 @@ class DotSwiperPaginationBuilder extends SwiperPlugin {
     this.size = 10.0,
     this.activeSize = 10.0,
     this.space = 3.0,
+    this.width,
+    this.height,
   });
 
   ///color when current index,if set null , will be Theme.of(context).primaryColor
@@ -169,6 +171,10 @@ class DotSwiperPaginationBuilder extends SwiperPlugin {
 
   /// Space between dots
   final double space;
+
+  final double? width;
+
+  final double? height;
 
   final Key? key;
 
@@ -212,11 +218,13 @@ class DotSwiperPaginationBuilder extends SwiperPlugin {
       list.add(Container(
         key: Key('pagination_$i'),
         margin: EdgeInsets.all(space),
-        child: ClipOval(
-          child: Container(
+        child: Container(
+          width: active ? width ?? activeSize : size,
+          height: active ? height ?? activeSize : size,
+          decoration: BoxDecoration(
             color: active ? activeColor : color,
-            width: active ? activeSize : size,
-            height: active ? activeSize : size,
+            borderRadius: BorderRadius.circular(
+                (active ? height ?? activeSize : size) / 2),
           ),
         ),
       ));
