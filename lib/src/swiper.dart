@@ -353,6 +353,7 @@ abstract class _SwiperTimerMixin extends State<Swiper> {
   @override
   void didUpdateWidget(Swiper oldWidget) {
     super.didUpdateWidget(oldWidget);
+    debugPrint('swiper ======> didUpdateWidget');
     if (_controller != oldWidget.controller) {
       final oldController = oldWidget.controller;
       if (oldController != null) {

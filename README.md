@@ -15,7 +15,8 @@ Swiper/Carousel for flutter, with multiple layouts, infinite loop. Compatible wi
 
 # :sparkles::sparkles: New Features:Layout for pagination.
 
-We are using this project [flutter_page_indicator](https://github.com/best-flutter/flutter_page_indicator) now .
+We are using this
+project [flutter_page_indicator](https://github.com/best-flutter/flutter_page_indicator) now .
 
 # :sparkles::sparkles: New Features:PageTransformer
 
@@ -23,7 +24,8 @@ Finally, we have `PageTransformer` like android, just set a `transformer` to `Sw
 it returns a widget that has been transformed. For now, only support for layout `DEFAULT`.
 Thanks to @FlutterRocks ,you've done great job 👏.
 
-We are using this project [transformer_page_view](https://github.com/best-flutter/transformer_page_view) now .
+We are using this
+project [transformer_page_view](https://github.com/best-flutter/transformer_page_view) now .
 
 # :sparkles::sparkles: New Features:Layout
 
@@ -60,11 +62,11 @@ We are using this project [transformer_page_view](https://github.com/best-flutte
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
 - [Constructor](#constructor)
-  - [Basic](#basic)
-  - [Pagination](#pagination)
-  - [Control buttons](#control-buttons)
-  - [Controller](#controller)
-  - [Autoplay](#autoplay)
+    - [Basic](#basic)
+    - [Pagination](#pagination)
+    - [Control buttons](#control-buttons)
+    - [Controller](#controller)
+    - [Autoplay](#autoplay)
 - [Build in layouts](#build-in-layouts)
 - [Codes](#codes)
 
@@ -142,9 +144,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-    body: Swiper(
-        itemBuilder: (BuildContext context,int index){
-          return Image.network("https://via.placeholder.com/350x150",fit: BoxFit.fill,);
+      body: Swiper(
+        itemBuilder: (BuildContext context, int index) {
+          return Image.network("https://via.placeholder.com/350x150", fit: BoxFit.fill,);
         },
         itemCount: 3,
         pagination: SwiperPagination(),
@@ -175,7 +177,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 #### Pagination
 
-The pagination extends from `SwiperPlugin`,the `SwiperPlugin` provides extra ui for `Swiper`.Set `SwiperPagination()` to show default pagination.
+The pagination extends from `SwiperPlugin`,the `SwiperPlugin` provides extra ui for `Swiper`
+.Set `SwiperPagination()` to show default pagination.
 
 | Parameter |          Default           | Description                                                                                                                               |
 | :-------- | :------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -186,13 +189,12 @@ The pagination extends from `SwiperPlugin`,the `SwiperPlugin` provides extra ui 
 If you'd like to customize your own pagination, you can do like this:
 
 ```dart
-Swiper(
-    ...,
-    pagination: SwiperCustomPagination(
-        builder:(BuildContext context, SwiperPluginConfig config){
-            return YourOwnPagination();
-        }
-    )
+Swiper
+(...,pagination: SwiperCustomPagination(
+builder:(BuildContext context, SwiperPluginConfig config){
+return YourOwnPagination();
+}
+)
 );
 
 ```
@@ -246,7 +248,8 @@ The control also extends from `SwiperPlugin`,set `SwiperControl()` to show defau
 
 #### Controller
 
-The `Controller` is used to control the `index` of the Swiper, start or stop autoplay.You can create a controller by `SwiperController()` and save the instance by futher usage.
+The `Controller` is used to control the `index` of the Swiper, start or stop autoplay.You can create
+a controller by `SwiperController()` and save the instance by futher usage.
 
 | Method                                       | Description                                         |
 | :------------------------------------------- | :-------------------------------------------------- |
@@ -268,16 +271,19 @@ The `Controller` is used to control the `index` of the Swiper, start or stop aut
 ![](https://github.com/jzoom/images/raw/master/layout1.gif)
 
 ```dart
-Swiper(
-  itemBuilder: (BuildContext context, int index) {
-    return Image.network(
-      "https://via.placeholder.com/288x188",
-      fit: BoxFit.fill,
-    );
-  },
-  itemCount: 10,
-  viewportFraction: 0.8,
-  scale: 0.9,
+Swiper
+(
+itemBuilder: (BuildContext context, int index) {
+return Image.network(
+"https://via.placeholder.com/288x188",
+fit: BoxFit.fill,
+);
+},
+itemCount: 10,
+viewportFraction: 0.8,
+scale:
+0.9
+,
 )
 
 ```
@@ -285,34 +291,40 @@ Swiper(
 ![](https://github.com/jzoom/images/raw/master/layout2.gif)
 
 ```dart
-Swiper(
-  itemBuilder: (BuildContext context, int index) {
-    return Image.network(
-      "https://via.placeholder.com/288x188",
-      fit: BoxFit.fill,
-    );
-  },
-  itemCount: 10,
-  itemWidth: 300.0,
-  layout: SwiperLayout.STACK,
+Swiper
+(
+itemBuilder: (BuildContext context, int index) {
+return Image.network(
+"https://via.placeholder.com/288x188",
+fit: BoxFit.fill,
+);
+},
+itemCount: 10,
+itemWidth: 300.0,
+layout:
+SwiperLayout
+.
+STACK
+,
 )
 ```
 
 ![](https://github.com/jzoom/images/raw/master/layout3.gif)
 
 ```dart
-Swiper(
-    itemBuilder: (BuildContext context, int index) {
-      return Image.network(
-        "https://via.placeholder.com/288x188",
-        fit: BoxFit.fill,
-      );
-    },
-    itemCount: 10,
-    itemWidth: 300.0,
-    itemHeight: 400.0,
-    layout: SwiperLayout.TINDER,
- )
+Swiper
+(
+itemBuilder: (BuildContext context, int index) {
+return Image.network(
+"https://via.placeholder.com/288x188",
+fit: BoxFit.fill,
+);
+},
+itemCount: 10,
+itemWidth: 300.0,
+itemHeight: 400.0,
+layout: SwiperLayout.TINDER,
+)
 ```
 
 ![](https://github.com/jzoom/images/raw/master/layout4.gif)
@@ -321,31 +333,35 @@ Very easy to create you own custom animation:
 
 ```dart
 
-Swiper(
-  layout: SwiperLayout.CUSTOM,
-  customLayoutOption: CustomLayoutOption(
-    startIndex: -1,
-    stateCount: 3
-  )..addRotate([
-    -45.0/180,
-    0.0,
-    45.0/180
-  ])..addTranslate([
-    Offset(-370.0, -40.0),
-    Offset(0.0, 0.0),
-    Offset(370.0, -40.0)
-  ]),
-  itemWidth: 300.0,
-  itemHeight: 200.0,
-  itemBuilder: (context, index) {
-    return Container(
-      color: Colors.grey,
-      child: Center(
-        child: Text("$index"),
-      ),
-    );
-  },
-  itemCount: 10,
+Swiper
+(
+layout: SwiperLayout.CUSTOM,
+customLayoutOption: CustomLayoutOption(
+startIndex: -1,
+stateCount: 3
+)..addRotate([
+-45.0/180,
+0.0,
+45.0/180
+])..addTranslate([
+Offset(-370.0, -40.0),
+Offset(0.0, 0.0),
+Offset(370.0, -40.0)
+]),
+itemWidth: 300.0,
+itemHeight: 200.0,
+itemBuilder: (context, index) {
+return Container(
+color: Colors.grey,
+child: Center(
+child: Text("$index"),
+),
+);
+},
+itemCount
+:
+10
+,
 )
 
 ```
@@ -354,22 +370,24 @@ The `CustomLayoutOption` is designed to describe animations.
 It is very easy to specify every state of items in Swiper.
 
 ```dart
-CustomLayoutOption(
-  // Which index is the first item of array below
-  startIndex: -1,
-  // array length
-  stateCount: 3
+CustomLayoutOption
+(
+// Which index is the first item of array below
+startIndex: -1,
+// array length
+stateCount: 3
 )..addRotate([
-  // rotation of every item
-  -45.0/180,
-  0.0,
-  45.0/180
+// rotation of every item
+-45.0/180,
+0.0,
+45.0/180
 ])..addTranslate([
-  // offset of every item
-  Offset(-370.0, -40.0),
-  Offset(0.0, 0.0),
-  Offset(370.0, -40.0)
-]);
+// offset of every item
+Offset(-370.0, -40.0),
+Offset(0.0, 0.0),
+Offset(370.0, -40.0)
+]
+);
 
 ```
 
@@ -378,39 +396,44 @@ CustomLayoutOption(
 ![Example](https://github.com/jzoom/images/raw/master/swiper-example.gif)
 
 ```dart
-ConstrainedBox(
-  child: Swiper(
-    outer:false,
-    itemBuilder: (c, i) {
-      return Wrap(
-        runSpacing: 6.0,
-        children: [0,1,2,3,4,5,6,7,8,9].map((i){
-          return SizedBox(
-            width: MediaQuery.of(context).size.width/5,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                SizedBox(
-                  child: Container(
-                    child: Image.network("https://fuss10.elemecdn.com/c/db/d20d49e5029281b9b73db1c5ec6f9jpeg.jpeg%3FimageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90"),
-                  ),
-                  height: MediaQuery.of(context).size.width * 0.12,
-                  width: MediaQuery.of(context).size.width * 0.12,
-                ),
-                Padding(padding: EdgeInsets.only(top:6.0),child: Text("$i"),)
-              ],
-            ),
-          );
-        }).toList(),
-      );
-    },
-    pagination: SwiperPagination(
-      margin: EdgeInsets.all(5.0)
-    ),
-    itemCount: 10,
-  ),
-    constraints:BoxConstraints.loose(Size(screenWidth, 170.0))
+ConstrainedBox
+(
+child: Swiper(
+outer:false,
+itemBuilder: (c, i) {
+return Wrap(
+runSpacing: 6.0,
+children: [0,1,2,3,4,5,6,7,8,9].map((i){
+return SizedBox(
+width: MediaQuery.of(context).size.width/5,
+child: Column(
+mainAxisSize: MainAxisSize.min,
+children: <Widget>[
+SizedBox(
+child: Container(
+child: Image.network("https://fuss10.elemecdn.com/c/db/d20d49e5029281b9b73db1c5ec6f9jpeg.jpeg%3FimageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90"),
 ),
+height: MediaQuery.of(context).size.width * 0.12,
+width: MediaQuery.of(context).size.width * 0.12,
+),
+Padding(padding: EdgeInsets.only(top:6.0),child: Text("$i"),)
+],
+),
+);
+}).toList(),
+);
+},
+pagination: SwiperPagination(
+margin: EdgeInsets.all(5.0)
+),
+itemCount: 10,
+),
+constraints:BoxConstraints.loose(Size(screenWidth,
+170.0
+)
+)
+)
+,
 
 ```
 

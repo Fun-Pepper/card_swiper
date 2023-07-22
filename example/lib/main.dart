@@ -93,15 +93,18 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: ListView(
-        children: render(context, [
-          ['Horizontal', 'Scroll Horizontal', '/example01'],
-          ['Vertical', 'Scroll Vertical', '/example02'],
-          ['Fraction', 'Fraction style', '/example03'],
-          ['Custom Pagination', 'Custom Pagination', '/example04'],
-          ['Phone', 'Phone view', '/example05'],
-          ['ScrollView ', 'In a ScrollView', '/example06'],
-          ['Custom', 'Custom all properties', '/example07']
-        ]),
+        children: render(
+          context,
+          [
+            ['Horizontal', 'Scroll Horizontal', '/example01'],
+            ['Vertical', 'Scroll Vertical', '/example02'],
+            ['Fraction', 'Fraction style', '/example03'],
+            ['Custom Pagination', 'Custom Pagination', '/example04'],
+            ['Phone', 'Phone view', '/example05'],
+            ['ScrollView ', 'In a ScrollView', '/example06'],
+            ['Custom', 'Custom all properties', '/example07']
+          ],
+        ),
       ),
     );
   }
